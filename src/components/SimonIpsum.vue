@@ -1,17 +1,17 @@
 <template>
-  <div class="hello">
-    <h1>Simon Ipsum</h1>
-    <div class="input">
-      <select name="quantity" id="quantity" v-model="quantity">
+  <div class="container">
+    <h1 class="headline">Simon Ipsum</h1>
+    <label class="input">
+      <select name="quantity" id="quantity" v-model="quantity" class="input--select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
       </select> {{ quantity > 1 ? 'Paragraphs' : 'Paragraph' }}
-    </div>
-    <button @click="generate">Let's redefine the industry</button>
-    <div class="body" v-if="ipsum" v-html="ipsum"></div>
+    </label>
+    <button class="button" @click="generate">Let's redefine the industry</button>
+    <div class="output" v-if="ipsum" v-html="ipsum"></div>
   </div>
 </template>
 
@@ -110,37 +110,89 @@ export default {
         this.ipsum += '<p>' + this.paragraph() + '</p>'
       }
     }
-  },
-  mounted () {
-    // console.log(this.paragraph())
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
+<style lang="scss" scoped>
+.container {
+  padding: 1.875em;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #EB1B75;
-}
-.input {
-  padding: 20px;
-}
-.body {
-  background-color: #F1F0F0;
-  margin: 20px auto;
+
+.output {
+  color: #FFF;
   max-width: 40.000em;
-  padding: 20px;
-  text-align: left;
+}
+
+.headline {
+  font-size: 5em;
+  line-height: 1;
+  margin-bottom: 0.25em;
+}
+
+.input {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.input--select {
+  margin-right: 0.625em;
+  appearance: none;
+  background-color: #FFF;
+  background-image: url('../assets/caret.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 0.750em;
+  font-weight: 400;
+  color: black;
+  padding: 0.625em 0.625em;
+  width: 3.750em;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.button {
+  appearance: none;
+  background-color: #FFF;
+  border-radius: 4px;
+  border: 0;
+  color: #ea1a74;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: 700;
+  line-height: 1;
+  margin: 1em 0;
+  max-height: 3.500em;
+  padding: 0.625em 3.333em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover {
+      background-color: darken(#FFF, 3%);
+      text-decoration: none;
+  }
+
+  &:active {
+      background-color: darken(#FFF, 5%);
+  }
 }
 </style>
