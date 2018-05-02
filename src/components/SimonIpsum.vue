@@ -141,7 +141,7 @@ export default {
   margin-right: 0.625em;
   appearance: none;
   background-color: #FFF;
-  background-image: url('../assets/caret.png');
+  background-image: url('/static/img/caret.png');
   background-position: right;
   background-repeat: no-repeat;
   border-color: transparent;
