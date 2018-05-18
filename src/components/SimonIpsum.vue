@@ -1,18 +1,21 @@
 <template>
-  <div class="container">
-    <h1 class="headline">Simon Ipsum</h1>
-    <label class="input">
-      <select name="quantity" id="quantity" v-model="quantity" class="input--select">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select> {{ quantity > 1 ? 'Paragraphs' : 'Paragraph' }}
-    </label>
-    <button class="button" @click="generate">Let's redefine the industry</button>
+  <section class="container">
+    <header class="headline">
+      <h1>Simon Ipsum</h1>
+    </header>
+    <div class="controls">
+      <label for="quantity" class="label box">
+        Are you ready to redefine the industry?
+      </label>
+      <div class="input box">
+        <input type="number" id="quantity" class="quantity" min="1" max="20" v-model="quantity">
+      </div>
+      <div class="action box">
+        <button class="button" @click="generate">{{ quantity > 1 ? 'Paragraphs' : 'Paragraph' }}</button>
+      </div>
+    </div>
     <div class="output" v-if="ipsum" v-html="ipsum"></div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -116,83 +119,120 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.container {
-  padding: 1.875em;
+.headline {
+  margin-bottom: 4em;
+
+  h1 {
+    font-size: 4.000em;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.5em;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (max-width: 50em) {
+      font-size: 3.000em;
+    }
+  }
+}
+
+.controls {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: 0;
+  margin: 0 auto;
+  max-width: 50em;
+
+  @media (max-width: 50em) {
+    flex-direction: column;
+  }
+
+  .box {
+    padding: 0.625em;
+  }
+
+  .label {
+    flex: 0 0 27.273em;
+    font-size: 0.688em;
+    font-weight: 900;
+    letter-spacing: 0.500em;
+    text-transform: uppercase;
+
+      @media (max-width: 50em) {
+        flex-basis: auto;
+        text-align: center;
+      }
+  }
+
+  .input {
+    .quantity {
+      background-color: transparent;
+      border: none;
+      color: transparent;
+      flex: 1;
+      font-family: 'Heroic';
+      font-size: 8.438em;
+      height: 1em;
+      line-height: 0.75;
+      text-align: center;
+      text-shadow: 0 0 0 #FFF;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .action {
+    flex: 0 0 18.750em;
+
+    @media (max-width: 50em) {
+      flex-basis: auto;
+      width: 18.750em;
+    }
+
+    .button {
+      appearance: none;
+      background-color: #C5206A;
+      border-radius: 3px;
+      border: 0;
+      color: #FFF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: 'AvenirNext';
+      font-size: 0.688em;
+      font-weight: 900;
+      letter-spacing: 0.500em;
+      line-height: 1;
+      margin: 1em 0;
+      padding: 1.5em 1em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease-in;
+      user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 100%;
+
+      &:hover {
+          background-color: darken(#C5206A, 3%);
+          text-decoration: none;
+      }
+
+      &:active {
+          background-color: darken(#FFF, 5%);
+      }
+    }
+  }
 }
 
 .output {
   color: #FFF;
+  margin: 0 auto;
   max-width: 40.000em;
-}
-
-.headline {
-  font-size: 5em;
-  line-height: 1;
-  margin-bottom: 0.25em;
-}
-
-.input {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-}
-
-.input--select {
-  margin-right: 0.625em;
-  appearance: none;
-  background-color: #FFF;
-  background-image: url('/static/img/caret.png');
-  background-position: right;
-  background-repeat: no-repeat;
-  border-color: transparent;
-  border-radius: 4px;
-  border-style: solid;
-  border-width: 1px;
-  font-size: 0.750em;
-  font-weight: 400;
-  color: black;
-  padding: 0.625em 0.625em;
-  width: 3.750em;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &::-ms-expand {
-    display: none;
-  }
-}
-
-.button {
-  appearance: none;
-  background-color: #FFF;
-  border-radius: 4px;
-  border: 0;
-  color: #ea1a74;
-  cursor: pointer;
-  display: inline-block;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 0.875em;
-  font-weight: 700;
-  line-height: 1;
-  margin: 1em 0;
-  max-height: 3.500em;
-  padding: 0.625em 3.333em;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color 0.2s ease-in;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-
-  &:hover {
-      background-color: darken(#FFF, 3%);
-      text-decoration: none;
-  }
-
-  &:active {
-      background-color: darken(#FFF, 5%);
-  }
 }
 </style>

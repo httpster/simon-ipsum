@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #EA1B75 50%, #212660 100%) 0 0 no-repeat fixed;
+  color: #FFF;
+  font-family: 'AvenirNext';
+  font-size: 16px;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 4em;
+
+  @media (max-width: 50em) {
+    padding: 2em;
+  }
+}
