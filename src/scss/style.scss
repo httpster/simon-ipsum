@@ -1,3 +1,6 @@
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+
 * {
   box-sizing: border-box;
 }
@@ -10,8 +13,9 @@ body {
 body {
   background: linear-gradient(180deg, #EA1B75 50%, #212660 100%) 0 0 no-repeat fixed;
   color: #FFF;
-  font-family: 'AvenirNext';
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  line-height: 1.8;
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

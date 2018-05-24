@@ -123,6 +123,7 @@ export default {
   margin-bottom: 4em;
 
   h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 4.000em;
     font-weight: 900;
     line-height: 1;
@@ -156,7 +157,7 @@ export default {
   .label {
     flex: 0 0 27.273em;
     font-size: 0.688em;
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: 0.500em;
     text-transform: uppercase;
 
@@ -172,7 +173,7 @@ export default {
       border: none;
       color: transparent;
       flex: 1;
-      font-family: 'Heroic';
+      font-family: 'Open Sans', sans-serif;
       font-size: 8.438em;
       height: 1em;
       line-height: 0.75;
@@ -196,15 +197,15 @@ export default {
 
     .button {
       appearance: none;
-      background-color: #C5206A;
+      background-color: darken(#C5206A, 3%);
       border-radius: 3px;
       border: 0;
       color: #FFF;
       cursor: pointer;
       display: inline-block;
-      font-family: 'AvenirNext';
+      font-family: 'Open Sans', sans-serif;
       font-size: 0.688em;
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: 0.500em;
       line-height: 1;
       margin: 1em 0;
@@ -219,7 +220,7 @@ export default {
       width: 100%;
 
       &:hover {
-          background-color: darken(#C5206A, 3%);
+          background-color: darken(#C5206A, 5%);
           text-decoration: none;
       }
 
